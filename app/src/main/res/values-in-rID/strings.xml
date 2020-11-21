@@ -28,6 +28,8 @@
     <string name="total_time">Total Waktu</string>
     <string name="total_calories_burned">Total Kalori Terbakat</string>
     <string name="average_speed">Kecepatan Rata-rata</string>
+    <string name="take_picture">Ambil Foto</string>
+    <string name="capture_description">Foto tubuhmu untuk melihat perubahanmu sebulum dan sesudah Lari</string>
     <string name="date_caps">TANGGAL</string>
     <string name="time_caps">WAKTU</string>
     <string name="distance_caps">JARAK</string>
@@ -38,6 +40,8 @@
     <string name="saved_changes">Perubahan disimpan</string>
     <string name="filling_info">Masukkan semua isian</string>
     <string name="permission_info">Anda perlu menerima izin lokasi untuk menggunakan aplikasi ini</string>
+    <string name="low_battrey_info">Baterai kamu sangat lemah</string>
+    <string name="camera_cannot_info">Tidak dapat membuka kamera</string>
     <string name="thin_category">Kurus</string>
     <string name="normal_category">Normal</string>
     <string name="fat_category">Gendut</string>

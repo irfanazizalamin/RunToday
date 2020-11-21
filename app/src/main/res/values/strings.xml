@@ -39,6 +39,10 @@
     <string name="total_calories_burned">Total Calories Burned</string>
     <string name="average_speed">Average Speed</string>
 
+    <!-- Photo Fragment -->
+    <string name="take_picture">Take Picture</string>
+    <string name="capture_description">Take your body to see your changes before and after Run</string>
+
     <string name="date_caps">DATE</string>
     <string name="time_caps">TIME</string>
     <string name="distance_caps">DISTANCE</string>
@@ -50,6 +54,8 @@
     <string name="saved_changes">Saved changes</string>
     <string name="filling_info">Please fill out all fields</string>
     <string name="permission_info">You need to accept location permissions to use this app</string>
+    <string name="low_battrey_info">Your Battery is too low</string>
+    <string name="camera_cannot_info">Unable to open camera</string>
 
     <string name="thin_category">Thin</string>
     <string name="normal_category">Normal</string>

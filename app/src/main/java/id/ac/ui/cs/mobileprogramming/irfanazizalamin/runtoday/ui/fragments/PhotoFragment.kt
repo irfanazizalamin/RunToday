@@ -39,7 +39,7 @@ class PhotoFragment : Fragment(R.layout.fragment_photo) {
             if (takePictureIntent.resolveActivity(requireActivity().packageManager) != null) {
                 startActivityForResult(takePictureIntent, REQUEST_CODE)
             } else {
-                Snackbar.make(view, "Unable to open camera", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(view, resources.getString(R.string.camera_cannot_info), Snackbar.LENGTH_LONG).show()
             }
         }
     }
