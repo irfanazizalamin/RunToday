@@ -39,4 +39,8 @@
         android:id="@+id/profileFragment"
         android:name="id.ac.ui.cs.mobileprogramming.irfanazizalamin.runtoday.ui.fragments.ProfileFragment"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/photoFragment"
+        android:name="id.ac.ui.cs.mobileprogramming.irfanazizalamin.runtoday.ui.fragments.PhotoFragment"
+        android:label="PhotoFragment" />
 </navigation>

@@ -12,6 +12,11 @@
         android:icon="@drawable/ic_graph" />
 
     <item
+        android:id="@+id/photoFragment"
+        android:title="@string/nav_photo"
+        android:icon="@drawable/ic_photo" />
+
+    <item
         android:id="@+id/profileFragment"
         android:title="@string/nav_statistic"
         android:icon="@drawable/ic_account" />

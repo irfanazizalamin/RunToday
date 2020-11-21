@@ -10,6 +10,7 @@
     <string name="app_name">Run Today</string>
     <string name="nav_run">Larimu</string>
     <string name="nav_statistic">Statistik</string>
+    <string name="nav_photo">Foto</string>
     <string name="nav_profile">Profil</string>
     <string name="welcoming_text">Masukkan Namamu, Beratmu, dan Tinggimu</string>
     <string name="your_name">Namamu</string>
