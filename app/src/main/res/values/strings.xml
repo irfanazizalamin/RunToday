@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Run Today</string>
+    <string name="nav_run">Your Run</string>
+    <string name="nav_statistic">Statistics</string>
+    <string name="nav_profile">Profile</string>
+
+    <string-array name="filter_options">
+        <item>Date</item>
+        <item>Running Time</item>
+        <item>Distance</item>
+        <item>Average Speed</item>
+        <item>Calories Burned</item>
+    </string-array>
+
+    <!-- Setup Fragment -->
+    <string name="welcoming_text">Please enter your Name, Weight, and Height.</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_weight">Your Weight</string>
+    <string name="your_height">Your Height</string>
+    <string name="continue_text">Continue</string>
+
+    <!-- Profile Fragment -->
+    <string name="change">Change</string>
+    <string name="BMI">BMI</string>
+    <string name="bmi_category">Category</string>
+
+    <!-- Run Fragment -->
+    <string name="sort_by">Sort by:</string>
+
+    <!-- Tracking Fragment -->
+    <string name="start">Start</string>
+    <string name="finish">Finish Run</string>
+    <string name="lets_go">Lets go,</string>
+
+    <!-- Statistic Fragment -->
+    <string name="total_distance">Total Distance</string>
+    <string name="total_time">Total Time</string>
+    <string name="total_calories_burned">Total Calories Burned</string>
+    <string name="average_speed">Average Speed</string>
+
+    <string name="date_caps">DATE</string>
+    <string name="time_caps">TIME</string>
+    <string name="distance_caps">DISTANCE</string>
+    <string name="average_speed_caps">AVERAGE SPEED</string>
+    <string name="calories_caps">CALORIES</string>
+    <string name="calories_burned_caps">CALORIES BURNED</string>
+    <string name="duration_caps">DURATION</string>
+
+    <string name="saved_changes">Saved changes</string>
+    <string name="filling_info">Please fill out all fields</string>
+    <string name="permission_info">You need to accept location permissions to use this app</string>
+
+    <string name="thin_category">Thin</string>
+    <string name="normal_category">Normal</string>
+    <string name="fat_category">Fat</string>
+    <string name="obesity_category">Obesity</string>
+
+    <string name="google_maps_key">AIzaSyB5iB40LWS_2H3oF-08iehQJ-6mH8KMpq4</string>
+</resources>
