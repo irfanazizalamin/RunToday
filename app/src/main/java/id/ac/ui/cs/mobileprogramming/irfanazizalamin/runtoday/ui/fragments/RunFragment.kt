@@ -1,6 +1,7 @@
 package id.ac.ui.cs.mobileprogramming.irfanazizalamin.runtoday.ui.fragments
 
 import android.Manifest
+import android.app.AlertDialog
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -78,6 +79,7 @@ class RunFragment : Fragment(R.layout.fragment_run), EasyPermissions.PermissionC
 
     private fun requestPermissions() {
         if (TrackingUtility.hasLocationPermissions(requireContext())) {
+            runContent.visibility = View.VISIBLE
             return
         }
 
@@ -104,12 +106,24 @@ class RunFragment : Fragment(R.layout.fragment_run), EasyPermissions.PermissionC
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
         if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
             AppSettingsDialog.Builder(this).build().show()
-        } else {
-            requestPermissions()
         }
+        requestPermissions()
     }
 
-    override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {}
+    override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
+        runContent.visibility = View.GONE
+
+        val builder = AlertDialog.Builder(context)
+
+        builder.setTitle("Information")
+        builder.setMessage("You have to activate your GPS to use this application")
+        builder.setIcon(android.R.drawable.ic_dialog_alert)
+        builder.setPositiveButton("OK"){dialogInterface, which -> }
+
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
+    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,

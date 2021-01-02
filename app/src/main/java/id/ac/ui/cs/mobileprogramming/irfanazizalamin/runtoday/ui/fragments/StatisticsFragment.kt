@@ -41,7 +41,6 @@ class StatisticsFragment : Fragment(R.layout.fragment_statistics) {
 
     private fun checkConnectivity() {
         if (isConnected()) {
-//            Toast.makeText(context, "jasdkljas kasjdklasj", Toast.LENGTH_LONG).show()
             content.visibility = View.VISIBLE
             connection.visibility = View.GONE
         } else {
