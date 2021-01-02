@@ -1,8 +1,15 @@
 package id.ac.ui.cs.mobileprogramming.irfanazizalamin.runtoday.ui.fragments
 
+import android.app.Service
 import android.graphics.Color
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkInfo
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -17,18 +24,43 @@ import id.ac.ui.cs.mobileprogramming.irfanazizalamin.runtoday.other.CustomMarker
 import id.ac.ui.cs.mobileprogramming.irfanazizalamin.runtoday.other.TrackingUtility
 import id.ac.ui.cs.mobileprogramming.irfanazizalamin.runtoday.ui.viewmodels.StatisticsViewModel
 import kotlinx.android.synthetic.main.fragment_statistics.*
-import kotlinx.android.synthetic.main.item_run.*
-import java.lang.Math.round
 
 @AndroidEntryPoint
 class StatisticsFragment : Fragment(R.layout.fragment_statistics) {
 
     private val viewModel: StatisticsViewModel by viewModels()
+    var connectivity: ConnectivityManager? = null
+    var infoNettwork: NetworkInfo? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        checkConnectivity()
         subscribeToObservers()
         setupBarChart()
+    }
+
+    private fun checkConnectivity() {
+        if (isConnected()) {
+//            Toast.makeText(context, "jasdkljas kasjdklasj", Toast.LENGTH_LONG).show()
+            content.visibility = View.VISIBLE
+            connection.visibility = View.GONE
+        } else {
+            content.visibility = View.GONE
+            connection.visibility = View.VISIBLE
+        }
+    }
+
+    private fun isConnected(): Boolean {
+        connectivity = requireContext().getSystemService(Service.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (connectivity != null) {
+            infoNettwork = connectivity!!.activeNetworkInfo
+            if (infoNettwork != null) {
+                if (infoNettwork!!.state == NetworkInfo.State.CONNECTED) {
+                    return true
+                }
+            }
+        }
+        return false
     }
 
     private fun setupBarChart() {
@@ -85,13 +117,18 @@ class StatisticsFragment : Fragment(R.layout.fragment_statistics) {
         })
         viewModel.runSortedByDate.observe(viewLifecycleOwner, Observer {
             it?.let {
-                val allAvgSpeeds = it.indices.map { i -> BarEntry(i.toFloat(), it[i].avgSpeedInKMH) }
+                val allAvgSpeeds =
+                    it.indices.map { i -> BarEntry(i.toFloat(), it[i].avgSpeedInKMH) }
                 val bardataSet = BarDataSet(allAvgSpeeds, "Avg Speed Over Time").apply {
                     valueTextColor = Color.WHITE
                     color = ContextCompat.getColor(requireContext(), R.color.colorAccent)
                 }
                 barChart.data = BarData(bardataSet)
-                barChart.marker = CustomMarkerView(it.reversed(), requireContext(), R.layout.marker_view)
+                barChart.marker = CustomMarkerView(
+                    it.reversed(),
+                    requireContext(),
+                    R.layout.marker_view
+                )
                 barChart.invalidate()
             }
         })
